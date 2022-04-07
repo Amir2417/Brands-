@@ -8,6 +8,11 @@ use Image;
 
 class BandController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
         $images = Bnad::all();
         return view('admin.multipic.index',compact('images'));
