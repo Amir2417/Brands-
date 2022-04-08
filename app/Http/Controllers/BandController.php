@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Bnad;
 use Image;
+use Auth;
 
 class BandController extends Controller
 {
@@ -41,5 +42,9 @@ class BandController extends Controller
         
          return Redirect()->back();
         
+    }
+    public function logout(){
+        Auth::logout();
+        return Redirect()->route('login');
     }
 }

@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 //Multiple Route
 Route::get('/allPicture', [BandController::class, 'index'])->name('all.multipic');
+Route::get('/user/logout', [BandController::class, 'logout'])->name('user.logout');
 Route::post('/insertImage', [BandController::class, 'insert']);
 
 Route::middleware([
@@ -32,6 +33,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('admin.index');
     })->name('dashboard');
 });
