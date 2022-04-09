@@ -18,6 +18,9 @@ class BandController extends Controller
         $images = Bnad::all();
         return view('admin.multipic.index',compact('images'));
     }
+
+
+    
     public function insert(Request $request){
 
         $img_name = $request ->file('image');
